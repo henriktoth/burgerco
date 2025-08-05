@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.debug, .debug-red {
+  outline: 1px solid red;
+}
+
+.debug-blue {
+  outline: 1px solid blue;
+}
+
+.debug-green {
+  outline: 1px solid green;
+}
+
+.svg-white {
+  filter: brightness(0) saturate(100%) invert(1);
+}
