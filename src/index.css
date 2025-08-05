@@ -15,3 +15,13 @@
 .svg-white {
   filter: brightness(0) saturate(100%) invert(1);
 }
+
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.chewy-regular {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}

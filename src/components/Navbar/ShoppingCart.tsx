@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function ShoppingCart() {
-    const [itemCount, setItemCount] = useState(1);
+    const [itemCount, setItemCount] = useState(0);
 
     return(
         <div className="mx-5 cursor-pointer">

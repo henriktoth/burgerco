@@ -3,7 +3,7 @@ import ShoppingCart from "./ShoppingCart"
 
 function Navbar() {
   return (
-    <div className="sticky top-0 z-50 flex justify-between bg-amber-400 text-white p-4cl">
+    <div className="sticky top-0 z-50 flex justify-between bg-amber-400 text-white p-3">
       {/* Logo */}
       <div className="flex items-center justify-start">
         <img 
