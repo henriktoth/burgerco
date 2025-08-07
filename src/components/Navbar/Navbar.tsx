@@ -23,7 +23,7 @@ function Navbar() {
           <ShoppingCart />
         </div>
         {/* Mobile Hamburger Menu */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center p-3">
           <button className="text-white focus:outline-none">
             <svg 
               className="w-10 h-10" 
