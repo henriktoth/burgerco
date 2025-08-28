@@ -1,18 +1,29 @@
-import ProductCard from "./PoductCard.tsx";
+import ProductCard from "./ProductCard.tsx";
+import menu from '../../assets/menu.json';
+
+interface MenuItem {
+    name: string;
+    ingredients: string;
+    allergens: string[];
+    price: number;
+}
 
 function ProductList(){
     return(
         <div>
             <h1 className="text-center font-bold text-4xl">TERMÉKEK</h1>
             <div className="flex flex-wrap justify-center gap-10 mt-6">
-                <ProductCard 
-                    name="Steak Burger" 
-                    ingredients="Aged beef patty with gourmet toppings."
-                    allergens={["Gluten", "Dairy"]}
-                    price={12.99}
-                />
+                {menu.map((item: MenuItem) => (
+                    <ProductCard
+                        key={item.name}
+                        name={item.name}
+                        ingredients={item.ingredients}
+                        allergens={item.allergens}
+                        price={item.price}
+                    />
+                ))}
             </div>
-        </div>
+            </div>
     )
 }
 
