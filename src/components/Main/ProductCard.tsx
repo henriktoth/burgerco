@@ -38,7 +38,6 @@ function ProductCard(props: ProductCard) {
                 count: 1
             }));
         }
-        console.log('Cart after add:', cart);
     };
 
     const RemoveFromCart = () => {
@@ -51,7 +50,6 @@ function ProductCard(props: ProductCard) {
         else {
             dispatch (removeFromCart({name: props.name}));
         }
-        console.log('Cart after remove:', cart);
     };
 
     return (
