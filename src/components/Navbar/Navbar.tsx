@@ -1,5 +1,6 @@
 import NavItem from "./NavItem"
 import ShoppingCart from "./ShoppingCart"
+import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
 
 function Navbar() {
   return (
@@ -7,7 +8,7 @@ function Navbar() {
       {/* Logo */}
       <div className="flex items-center justify-start">
         <img 
-          src="/navbar/HamburgerIcon.svg" 
+          src={HamburgerIcon} 
           alt="Logo" 
           className="svg-white w-10 h-10 mx-3 cursor-pointer"
         />
