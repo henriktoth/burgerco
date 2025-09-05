@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, updateItemCount, removeFromCart} from "../../store/cartSlice";
 
 interface ProductCard {
     name: string
@@ -7,35 +8,51 @@ interface ProductCard {
     price: number
 }
 
+interface CartItem {
+    name: string; 
+    count: number 
+}
+
+interface RootState {
+  cart: CartItem[];
+}
+
 function ProductCard(props: ProductCard) {
-    const [amount, setAmount] = useState(0);
-    const [orderData, setOrderData] = useState<ProductCard & { count: number }>({
-        name: props.name,
-        ingredients: props.ingredients,
-        allergens: props.allergens,
-        price: props.price,
-        count: 0
-    });
+    const dispatch = useDispatch();
+    const cart = useSelector((state: RootState) => state.cart);
+    const cartItem = cart.find((item: CartItem ) => item.name === props.name);
+    const amount = cartItem ? cartItem.count : 0;
 
-    useEffect(() => {
-        setOrderData((prevData) => ({
-            ...prevData,
-            count: amount
-        }));
-        console.log(orderData);
-    }, [amount])
-
-    const AddAmount = (num: number) => {
-        setAmount(amount + num);
-    }
-
-    const SubtractAmount = (num: number) => {
-        if (amount > 0) {
-            setAmount(amount - num);
+    const AddToCart = () => {
+        if (cartItem) {
+            dispatch(updateItemCount({
+                name: props.name,
+                count: cartItem.count + 1
+            }));
         } else {
-            setAmount(0);
+            dispatch(addToCart({
+                name: props.name,
+                ingredients: props.ingredients,
+                allergens: props.allergens,
+                price: props.price,
+                count: 1
+            }));
         }
-    }
+        console.log('Cart after add:', cart);
+    };
+
+    const RemoveFromCart = () => {
+        if (cartItem && cartItem.count > 1) {
+            dispatch(updateItemCount({
+                name: props.name,
+                count: cartItem.count - 1
+            }));
+        }
+        else {
+            dispatch (removeFromCart({name: props.name}));
+        }
+        console.log('Cart after remove:', cart);
+    };
 
     return (
         <div className="w-56 flex flex-col m-2 border-white bg-neutral-50 rounded-lg shadow-lg">
@@ -72,7 +89,7 @@ function ProductCard(props: ProductCard) {
                             type="button"
                             className="w-8 h-8 rounded-full border border-gray-300 flex items-center 
                             justify-center text-lg leading-none hover:cursor-pointer hover:bg-neutral-100"
-                            onClick={() => SubtractAmount(1)}
+                            onClick={RemoveFromCart}
                         >
                             −
                         </button>
@@ -83,7 +100,7 @@ function ProductCard(props: ProductCard) {
                             type="button"
                             className="w-8 h-8 rounded-full border border-gray-300 flex items-center
                              justify-center text-lg leading-none hover:cursor-pointer hover:bg-neutral-100"
-                            onClick={() => AddAmount(1)}
+                            onClick={AddToCart}
                         >
                             +
                         </button>

@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "name": "Classic Burger",
         "ingredients": "Beef patty, lettuce, tomato, onion, pickles, ketchup, mustard",
         "allergens": [
@@ -9,21 +10,24 @@
         "price": 8.99
     },
     {
-        "name": "Classic Burger",
-        "ingredients": "Beef patty, lettuce, tomato, onion, pickles, ketchup, mustard",
+        "id": "2",
+        "name": "Cheese Burger",
+        "ingredients": "Beef patty, cheddar cheese, lettuce, tomato, onion, pickles, ketchup, mustard",
         "allergens": [
             "Gluten",
-            "Soy"
+            "Soy",
+            "Milk"
         ],
-        "price": 8.99
+        "price": 9.49
     },
     {
-        "name": "Classic Burger",
-        "ingredients": "Beef patty, lettuce, tomato, onion, pickles, ketchup, mustard",
+        "id": "3",
+        "name": "Veggie Burger",
+        "ingredients": "Veggie patty, lettuce, tomato, onion, pickles, vegan mayo",
         "allergens": [
             "Gluten",
             "Soy"
         ],
-        "price": 8.99
+        "price": 8.49
     }
 ]
