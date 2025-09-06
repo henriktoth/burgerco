@@ -37,7 +37,7 @@ function ShoppingCart() {
   }, [open]);
 
   return (
-    <div className="relative mx-5" ref={cartRef}>
+    <div className="relative mx-5 hover:cursor-pointer " ref={cartRef}>
       <div className="cursor-pointer flex items-center" onClick={() => setOpen((prev) => !prev)}>
         <p className="bg-amber-50 rounded-full max-w-fit text-amber-400 px-2">{totalCount}</p>
         <img 
@@ -47,7 +47,7 @@ function ShoppingCart() {
         />
       </div>
       {open && (
-        <div className="absolute right-0 mt-4 w-64 bg-neutral-50 border rounded-lg shadow-lg z-50 p-4">
+        <div className="absolute right-0 mt-4 w-100 bg-neutral-100 rounded-lg shadow-xl z-50 p-4">
           <h2 className="font-bold text-lg mb-2 text-black">Kosár tartalma</h2>
           {cart.length === 0 ? (
             <p className="text-gray-500">A kosár üres.</p>
@@ -55,12 +55,13 @@ function ShoppingCart() {
               <>
               <ul>
                 {cart.map((item: CartItem, index: number) => (
-                  <li key={index} className="flex justify-between items-center py-1 border-b last:border-b-0 text-black">
-                    <span className="font-medium">{item.name}</span>
-                    <span className="text-sm">x{item.count}</span>
-                    <span className="text-sm">{(item.price * item.count).toFixed(2)} $</span>
-                  </li>
-                ))}
+                  <li key={index} className="flex justify-between items-center py-1 gap-5 border-b last:border-b-0 text-black">
+                    <span className="font-medium w-1/2">{item.name}</span>
+                    <div className="flex justify-between w-1/2">
+                      <span className="text-sm">x{item.count}</span>
+                      <span className="text-sm">{(item.price * item.count).toFixed(2)} $</span>
+                    </div>
+                  </li>))}
               </ul>
               <div className="flex justify-between items-center mt-4 font-bold text-black">
                 <span>Összesen:</span>

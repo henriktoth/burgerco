@@ -29,5 +29,37 @@
             "Soy"
         ],
         "price": 8.49
+    },
+    {
+        "id": "4",
+        "name": "Bacon Burger",
+        "ingredients": "Beef patty, bacon, lettuce, tomato, onion, mayo",
+        "allergens": [
+            "Gluten",
+            "Soy"
+        ],
+        "price": 10.49
+    },
+    {
+        "id": "5",
+        "name": "Mushroom Swiss Burger",
+        "ingredients": "Beef patty, swiss cheese, sautéed mushrooms, lettuce, mayo",
+        "allergens": [
+            "Gluten",
+            "Soy",
+            "Milk"
+        ],
+        "price": 10.99
+    },
+    {
+        "id": "6",
+        "name": "Spicy Chicken Burger",
+        "ingredients": "Crispy chicken breast, spicy sauce, lettuce, pickles",
+        "allergens": [
+            "Gluten",
+            "Soy",
+            "Eggs"
+        ],
+        "price": 9.99
     }
 ]

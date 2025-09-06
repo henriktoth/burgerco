@@ -53,7 +53,7 @@ function ProductCard(props: ProductCard) {
     };
 
     return (
-        <div className="w-56 flex flex-col m-2 border-white bg-neutral-50 rounded-lg shadow-lg">
+        <div className="w-56 flex flex-col m-2 border-white bg-neutral-50 rounded-lg shadow-xl">
             {/* Image Container */}
             <div className="flex justify-center">
                 <img

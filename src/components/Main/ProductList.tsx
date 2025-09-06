@@ -10,9 +10,9 @@ interface MenuItem {
 
 function ProductList(){
     return(
-        <div>
-            <h1 className="text-center font-bold text-4xl">TERMÉKEK</h1>
-            <div className="flex flex-wrap justify-center gap-10 mt-6">
+        <div className="bg-amber-400">
+            <h1 className="text-center text-white font-bold text-5xl p-10">TERMÉKEK</h1>
+            <div className="flex flex-wrap justify-center gap-10">
                 {menu.map((item: MenuItem) => (
                     <ProductCard
                         key={item.name}
