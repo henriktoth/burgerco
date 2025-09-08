@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, updateItemCount, removeFromCart} from "../../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { addToCart, updateItemCount, removeFromCart} from "../../store/cartSlice"
 
 interface ProductCard {
     name: string
@@ -9,26 +9,26 @@ interface ProductCard {
 }
 
 interface CartItem {
-    name: string; 
+    name: string 
     count: number 
 }
 
 interface RootState {
-  cart: CartItem[];
+  cart: CartItem[]
 }
 
 function ProductCard(props: ProductCard) {
-    const dispatch = useDispatch();
-    const cart = useSelector((state: RootState) => state.cart);
-    const cartItem = cart.find((item: CartItem ) => item.name === props.name);
-    const amount = cartItem ? cartItem.count : 0;
+    const dispatch = useDispatch()
+    const cart = useSelector((state: RootState) => state.cart)
+    const cartItem = cart.find((item: CartItem ) => item.name === props.name)
+    const amount = cartItem ? cartItem.count : 0
 
     const AddToCart = () => {
         if (cartItem) {
             dispatch(updateItemCount({
                 name: props.name,
                 count: cartItem.count + 1
-            }));
+            }))
         } else {
             dispatch(addToCart({
                 name: props.name,
@@ -36,21 +36,21 @@ function ProductCard(props: ProductCard) {
                 allergens: props.allergens,
                 price: props.price,
                 count: 1
-            }));
+            }))
         }
-    };
+    }
 
     const RemoveFromCart = () => {
         if (cartItem && cartItem.count > 1) {
             dispatch(updateItemCount({
                 name: props.name,
                 count: cartItem.count - 1
-            }));
+            }))
         }
         else {
-            dispatch (removeFromCart({name: props.name}));
+            dispatch (removeFromCart({name: props.name}))
         }
-    };
+    }
 
     return (
         <div className="w-56 flex flex-col m-2 border-white bg-neutral-50 rounded-lg shadow-xl">

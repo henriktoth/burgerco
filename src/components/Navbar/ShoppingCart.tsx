@@ -1,40 +1,40 @@
 
-import ShoppingCartIcon from '../../assets/images/ShoppingCartIcon.svg';
-import { useSelector } from 'react-redux';
+import ShoppingCartIcon from '../../assets/images/ShoppingCartIcon.svg'
+import { useSelector } from 'react-redux'
 
 interface CartItem {
-    name: string; 
-    ingredients: string; 
-    allergens: string[]; 
-    price: number; 
-    count: number;
+    name: string
+    ingredients: string
+    allergens: string[]
+    price: number
+    count: number
 }
 
 interface RootState {
-  cart: CartItem[];
+  cart: CartItem[]
 }
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react'
 
 function ShoppingCart() {
-  const cart = useSelector((state: RootState) => state.cart);
-  const totalCount = cart.reduce((sum: number, item: CartItem) => sum + item.count, 0);
-  const [open, setOpen] = useState(false);
-  const cartRef = useRef<HTMLDivElement>(null);
+  const cart = useSelector((state: RootState) => state.cart)
+  const totalCount = cart.reduce((sum: number, item: CartItem) => sum + item.count, 0)
+  const [open, setOpen] = useState(false)
+  const cartRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-        setOpen(false);
+        setOpen(false)
       }
     }
     if (open) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
     }
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [open]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [open])
 
   return (
     <div className="relative mx-5 hover:cursor-pointer " ref={cartRef}>
@@ -79,7 +79,7 @@ function ShoppingCart() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default ShoppingCart;
+export default ShoppingCart

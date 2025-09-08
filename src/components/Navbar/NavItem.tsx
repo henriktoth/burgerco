@@ -1,4 +1,4 @@
-function NavItem(props: { href: string; title: string}) {
+function NavItem(props: { href: string, title: string}) {
   return (
     <a
       href={props.href}

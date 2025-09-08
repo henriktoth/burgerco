@@ -1,11 +1,11 @@
-import ProductCard from "./ProductCard.tsx";
-import menu from '../../assets/menu.json';
+import ProductCard from "./ProductCard.tsx"
+import menu from '../../assets/menu.json'
 
 interface MenuItem {
-    name: string;
-    ingredients: string;
-    allergens: string[];
-    price: number;
+    name: string
+    ingredients: string
+    allergens: string[]
+    price: number
 }
 
 function ProductList(){
@@ -27,4 +27,4 @@ function ProductList(){
     )
 }
 
-export default ProductList;
+export default ProductList
