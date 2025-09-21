@@ -1,10 +1,10 @@
-import { useState } from "react";
-import NavItem from "./NavItem";
-import ShoppingCart from "./ShoppingCart";
-import HamburgerIcon from '../../assets/images/HamburgerIcon.svg';
+import { useState } from "react"
+import NavItem from "./NavItem"
+import ShoppingCart from "./ShoppingCart"
+import HamburgerIcon from '../../assets/images/HamburgerIcon.svg'
 
 function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <div className="sticky top-0 z-50 flex flex-col bg-amber-400 text-white p-3 shadow-xl">
@@ -83,7 +83,7 @@ function Navbar() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
