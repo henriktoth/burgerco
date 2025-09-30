@@ -37,7 +37,7 @@ function Map() {
 
   return(
     <div className="flex flex-col items-center py-15">
-      <h1 className="text-4xl font-bold text-center mb-10 uppercase">Itt találhatsz meg minket</h1>
+      <h1 className="text-4xl font-bold text-center mb-10 uppercase px-10">Itt találhatsz meg minket</h1>
       <MapContainer 
         center={[47.4979, 19.0402]} 
         zoom={12} 
