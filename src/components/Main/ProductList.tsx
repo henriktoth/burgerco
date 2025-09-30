@@ -10,7 +10,7 @@ interface MenuItem {
 
 function ProductList(){
     return(
-        <div className="bg-amber-400">
+        <div className="bg-amber-400 pb-10">
             <h1 className="text-center text-white font-bold text-5xl p-10">TERMÉKEK</h1>
             <div className="flex flex-wrap justify-center gap-10">
                 {menu.map((item: MenuItem) => (
