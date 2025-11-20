@@ -5,7 +5,7 @@ import restaurants from '../../assets/restaurants.json'
 function Map() {
   return(
     <div id="etterem" className="flex flex-col items-center py-15">
-      <h1 className="text-4xl font-bold text-center mb-10 uppercase px-10">Itt találhatsz meg minket</h1>
+      <h1 className="text-4xl font-bold text-center mb-10 uppercase px-10">You can find us here</h1>
       <MapContainer 
         center={[47.4979, 19.0402]} 
         zoom={12} 

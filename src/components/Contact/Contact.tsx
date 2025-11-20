@@ -27,7 +27,7 @@ function Contact() {
             <h1 className="text-4xl font-bold text-center mb-10 uppercase px-10">Get in touch with us</h1>
             <div className="bg-neutral-50 rounded-lg shadow-lg p-6 md:p-10 w-full">
                 <h3 className="text-2xl font-bold mb-4">Contact</h3>
-                <p className="text-sm text-gray-700 mb-4">Write us a message — we'll open your email client to send it.</p>
+                <p className="text-sm text-gray-700 mb-4">Write us a message — we'll try to answer as soon as possible.</p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="flex flex-col md:flex-row gap-4">
