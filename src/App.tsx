@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer.tsx'
 import Main from './components/Main/Main.tsx'
 import ProductList from './components/Main/ProductList.tsx'
 import Map from './components/Main/Map.tsx'
+import Contact from './components/Contact/Contact.tsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Main/>
       <ProductList/>
       <Map/>
+      <Contact/>
       <Footer/>
     </>
   )

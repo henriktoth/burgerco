@@ -7,7 +7,7 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <div className="sticky top-0 z-50 flex flex-col bg-amber-400 text-white p-3 shadow-xl">
+    <div className="sticky top-0 z-[9999] flex flex-col bg-amber-400 text-white p-3 shadow-xl">
       {/* Logo */}
       <div className="flex items-center justify-between">
         <div className="flex items-center justify-start">
@@ -20,9 +20,9 @@ function Navbar() {
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center">
-          <NavItem href="" title="Menü" />
-          <NavItem href="" title="Éttermek" />
-          <NavItem href="" title="Kapcsolat" />
+          <NavItem href="#menu" title="Menü" />
+          <NavItem href="#etterem" title="Éttermek" />
+          <NavItem href="#kapcsolat" title="Kapcsolat" />
           <ShoppingCart />
         </div>
         {/* Mobile Hamburger Menu */}
@@ -57,21 +57,21 @@ function Navbar() {
             className="py-3 px-6 border-b border-amber-300 text-white hover:bg-amber-500"
             onClick={() => setMobileOpen(false)}
           >
-            Menü
+            Menu
           </a>
           <a
             href="#etterem"
             className="py-3 px-6 border-b border-amber-300 text-white hover:bg-amber-500"
             onClick={() => setMobileOpen(false)}
           >
-            Éttermek
+            Restaurants
           </a>
           <a
             href="#kapcsolat"
             className="py-3 px-6 border-b border-amber-300 text-white hover:bg-amber-500"
             onClick={() => setMobileOpen(false)}
           >
-            Kapcsolat
+            Contact
           </a>
           <a
             href="/cart"
