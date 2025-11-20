@@ -20,9 +20,9 @@ function Navbar() {
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center">
-          <NavItem href="#menu" title="Menü" />
-          <NavItem href="#etterem" title="Éttermek" />
-          <NavItem href="#kapcsolat" title="Kapcsolat" />
+          <NavItem href="#menu" title="Menu" />
+          <NavItem href="#etterem" title="Restaurants" />
+          <NavItem href="#kapcsolat" title="Contact" />
           <ShoppingCart />
         </div>
         {/* Mobile Hamburger Menu */}
@@ -78,7 +78,7 @@ function Navbar() {
             className="py-3 px-6 text-white font-bold hover:bg-amber-500"
             onClick={() => setMobileOpen(false)}
           >
-            Ugrás a kosárhoz
+            Go to Cart
           </a>
         </div>
       )}
